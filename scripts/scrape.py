@@ -71,3 +71,106 @@ def parse_ipo_calendar(url: str = CALENDAR_URL) -> list:
             if table:
                 ipos.extend(_parse_table(table))
     return ipos
+
+
+def search_edgar(symbol: str, company: str) -> str | None:
+    """
+    Search SEC EDGAR for S-1/F-1 filing. Returns main document URL or None.
+    Tries symbol first, then company name.
+    """
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    start = (datetime.utcnow() - timedelta(days=180)).strftime("%Y-%m-%d")
+
+    for query in [f'"{symbol}"', f'"{company}"']:
+        params = {
+            "q": query,
+            "forms": "S-1,F-1",
+            "dateRange": "custom",
+            "startdt": start,
+            "enddt": today,
+        }
+        try:
+            resp = requests.get(EDGAR_SEARCH_URL, params=params, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+            hits = resp.json().get("hits", {}).get("hits", [])
+            if hits:
+                src = hits[0]["_source"]
+                cik = str(src.get("entity_id", "")).lstrip("0") or "0"
+                accession = src.get("accession_no", "")  # e.g. "0001234567-26-000001"
+                doc_url = _get_main_doc_url(cik, accession)
+                return doc_url
+        except Exception as e:
+            print(f"[scrape] EDGAR search failed for {query}: {e}")
+    return None
+
+
+def _get_main_doc_url(cik: str, accession_no: str) -> str | None:
+    """
+    Fetch filing index and return URL of largest .htm file (the main S-1 document).
+    accession_no: original format with dashes, e.g. '0001234567-26-000001'
+    """
+    accession_nodash = accession_no.replace("-", "")
+    # Correct SEC EDGAR index URL: uses nodash dir + original-with-dashes filename
+    index_url = (
+        f"https://www.sec.gov/Archives/edgar/data/{cik}/{accession_nodash}/"
+        f"{accession_no}-index.htm"
+    )
+    try:
+        resp = requests.get(index_url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "lxml")
+        best_url = None
+        best_size = 0
+        for row in soup.select("table tr"):
+            cells = row.select("td")
+            if len(cells) >= 3:
+                link = row.select_one("a[href$='.htm']")
+                if link:
+                    try:
+                        size = int(cells[-1].get_text(strip=True).replace(",", ""))
+                    except ValueError:
+                        size = 0
+                    if size > best_size:
+                        best_size = size
+                        href = link.get("href", "")
+                        if href.startswith("http"):
+                            best_url = href
+                        else:
+                            best_url = f"https://www.sec.gov{href}"
+        return best_url
+    except Exception as e:
+        print(f"[scrape] Filing index fetch failed: {e}")
+        return None
+
+
+SECTION_KEYWORDS = {
+    "business": ["BUSINESS"],
+    "risks": ["RISK FACTORS"],
+    "financials": ["RESULTS OF OPERATIONS", "SELECTED FINANCIAL DATA", "FINANCIAL STATEMENTS"],
+}
+
+
+def fetch_s1_excerpt(url: str) -> str:
+    """
+    Download S-1 HTML and extract Business + Risk Factors + Financials sections.
+    Returns combined text (<=3000 chars). Returns "" on any failure.
+    """
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=30)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "lxml")
+        full_text = soup.get_text(separator="\n", strip=True)
+    except Exception as e:
+        print(f"[scrape] S-1 download failed for {url}: {e}")
+        return ""
+
+    parts = []
+    for section_name, keywords in SECTION_KEYWORDS.items():
+        for kw in keywords:
+            idx = full_text.upper().find(kw)
+            if idx != -1:
+                excerpt = full_text[idx: idx + 1000].strip()
+                parts.append(excerpt)
+                break
+
+    return "\n\n".join(parts)[:3000]  # hard cap per spec §5.3
