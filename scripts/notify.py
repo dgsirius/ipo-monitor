@@ -30,7 +30,7 @@ def send_gmail(user: str, app_password: str, message: str) -> None:
     msg["Subject"] = "📊 IPO Monitor 周报更新"
     msg["From"] = user
     msg["To"] = user
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30) as server:
         server.login(user, app_password)
         server.sendmail(user, user, msg.as_string())
 
