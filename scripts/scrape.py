@@ -77,14 +77,19 @@ def search_edgar(symbol: str, company: str) -> str | None:
     """
     Search SEC EDGAR for S-1/F-1 filing. Returns main document URL or None.
     Tries symbol first, then company name.
+
+    The EDGAR full-text search index (efts.sec.gov/LATEST/search-index) returns
+    _source fields: 'ciks' (list), 'adsh' (accession number with dashes),
+    'form' (filing type).  These differ from the legacy field names 'entity_id',
+    'accession_no', and 'form_type' that were previously used.
     """
     today = datetime.utcnow().strftime("%Y-%m-%d")
-    start = (datetime.utcnow() - timedelta(days=180)).strftime("%Y-%m-%d")
+    start = (datetime.utcnow() - timedelta(days=365)).strftime("%Y-%m-%d")
 
     for query in [f'"{symbol}"', f'"{company}"']:
         params = {
             "q": query,
-            "forms": "S-1,F-1",
+            "forms": "S-1,S-1/A,F-1,F-1/A",
             "dateRange": "custom",
             "startdt": start,
             "enddt": today,
@@ -95,8 +100,11 @@ def search_edgar(symbol: str, company: str) -> str | None:
             hits = resp.json().get("hits", {}).get("hits", [])
             if hits:
                 src = hits[0]["_source"]
-                cik = str(src.get("entity_id", "")).lstrip("0") or "0"
-                accession = src.get("accession_no", "")  # e.g. "0001234567-26-000001"
+                # ciks is a list of zero-padded CIK strings, e.g. ["0002096300"]
+                ciks = src.get("ciks") or []
+                cik = str(ciks[0]).lstrip("0") if ciks else "0"
+                # adsh is the accession number with dashes, e.g. "0001234567-26-000001"
+                accession = src.get("adsh", "")
                 doc_url = _get_main_doc_url(cik, accession)
                 return doc_url
         except Exception as e:

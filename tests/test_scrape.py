@@ -76,10 +76,10 @@ MOCK_EDGAR_RESPONSE = {
         "hits": [
             {
                 "_source": {
-                    "entity_id": "99999",
+                    "ciks": ["0000099999"],
                     "file_date": "2026-03-01",
-                    "form_type": "S-1",
-                    "accession_no": "0000999999-26-000001",
+                    "form": "S-1",
+                    "adsh": "0000999999-26-000001",
                     "display_names": ["Test Corp (CIK 0000099999)"]
                 }
             }
