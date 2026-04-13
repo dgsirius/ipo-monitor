@@ -1,0 +1,138 @@
+import json
+import os
+import re
+import subprocess
+import sys
+from datetime import datetime
+
+from scripts.utils import latest_data_file, load_all_data
+
+PROMPT_TEMPLATE = """你是一位专业IPO研究分析师。根据以下SEC招股书摘录，生成JSON格式的结构化分析。
+只输出一个JSON对象，不要任何其他文字或markdown代码块。
+
+公司：{company}（{symbol}）
+交易所：{exchange}
+招股书摘录（来自S-1 Business、Risk Factors、Financial Highlights三节）：
+---
+{sec_raw_excerpt}
+---
+
+输出以下JSON结构（字段无法提取时填null）：
+{{
+  "industry": "行业分类（英文）",
+  "business_summary": "核心业务描述（中文，100字以内）",
+  "financials": {{
+    "revenue_3y": [年1数字, 年2数字, 年3数字],
+    "net_income_3y": [年1数字, 年2数字, 年3数字],
+    "gross_margin": "xx%或null",
+    "revenue_growth_yoy": "xx%或null",
+    "debt_ratio": "x.x或null",
+    "cash_reserves": "$xxM或null",
+    "operating_cashflow": "$xxM或null",
+    "eps": "x.xx或null",
+    "ps_ratio": "x.xx或null"
+  }},
+  "investors": {{
+    "underwriters": [],
+    "cornerstone_investors": [],
+    "funding_rounds": []
+  }},
+  "risks": ["风险1", "风险2", "风险3"],
+  "claude_summary": "综合评价（中文，100字以内）"
+}}"""
+
+
+def build_prompt(ipo: dict) -> str:
+    return PROMPT_TEMPLATE.format(
+        company=ipo.get("company", ""),
+        symbol=ipo.get("symbol", ""),
+        exchange=ipo.get("exchange", ""),
+        sec_raw_excerpt=ipo.get("sec_raw_excerpt") or "（招股书摘录不可用，请根据公司名和代码推断）",
+    )
+
+
+def run_claude(prompt: str) -> dict:
+    """
+    Call 'claude -p' with prompt via stdin. Returns parsed dict.
+    On failure returns {"error": "..."}.
+
+    Note: spec mentions --input-file temp file to avoid Windows ARG_MAX.
+    We use subprocess stdin (input=) instead — this bypasses ARG_MAX entirely
+    (stdin pipe has no length limit on Windows) and is cleaner than temp files.
+    """
+    try:
+        result = subprocess.run(
+            ["claude", "-p"],
+            input=prompt,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            timeout=120,
+        )
+        output = result.stdout or ""
+        match = re.search(r'\{.*\}', output, re.DOTALL)
+        if not match:
+            return {"error": "parse_failed", "raw": output[:500]}
+        return json.loads(match.group())
+    except subprocess.TimeoutExpired:
+        return {"error": "timeout"}
+    except json.JSONDecodeError as e:
+        return {"error": f"json_decode: {e}"}
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def generate_all(data_dir: str = "data", skip_git: bool = False):
+    """
+    Read latest data file, generate analysis for companies with analysis=None,
+    write back after each company (resumable). Then rebuild HTML and push.
+    """
+    if not skip_git:
+        result = subprocess.run(["git", "pull", "--ff-only"], capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"[generate] Warning: git pull failed: {result.stderr.strip()}")
+
+    latest = latest_data_file(data_dir)
+    if not latest:
+        print("[generate] No data file found.")
+        return
+
+    with open(latest, encoding="utf-8") as f:
+        data = json.load(f)
+
+    pending = [ipo for ipo in data["ipos"] if ipo.get("analysis") is None]
+    print(f"[generate] {len(pending)} companies to analyze in {latest}")
+
+    for ipo in pending:
+        symbol = ipo["symbol"]
+        print(f"[generate] Analyzing {symbol} ({ipo['company']})...")
+        prompt = build_prompt(ipo)
+        analysis = run_claude(prompt)
+        ipo["analysis"] = analysis
+        with open(latest, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"[generate] Done {symbol}")
+
+    data["ai_analyzed_at"] = datetime.utcnow().isoformat() + "Z"
+    with open(latest, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    # Rebuild full HTML — call build_html directly, no sys.argv injection
+    from scripts.build import build_html
+    weeks = load_all_data(data_dir)
+    html = build_html(weeks, mode="full")
+    os.makedirs("docs", exist_ok=True)
+    with open("docs/index.html", "w", encoding="utf-8") as f:
+        f.write(html)
+    print("[generate] Built docs/index.html (full mode)")
+
+    if not skip_git:
+        week = data.get("week", "unknown")
+        subprocess.run(["git", "add", "data/", "docs/"], check=True)
+        subprocess.run(["git", "commit", "-m", f"feat: AI analysis {week}"], check=True)
+        subprocess.run(["git", "push"], check=True)
+        print("[generate] Pushed. View at https://dgsirius.github.io/ipo-monitor")
+
+
+if __name__ == "__main__":
+    generate_all()
