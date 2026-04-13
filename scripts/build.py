@@ -204,7 +204,7 @@ def build_html(weeks: list, mode: str = "basic") -> str:
             ai_ts = w["ai_analyzed_at"][:16].replace("T", " ")
             break
 
-    data_json = json.dumps(weeks, ensure_ascii=False)
+    data_json = json.dumps(weeks, ensure_ascii=False).replace("</", "<\\/")
     html = HTML_TEMPLATE
     html = html.replace("{BADGE_CLASS}", badge_class)
     html = html.replace("{BADGE_TEXT}", badge_text)

@@ -51,6 +51,23 @@ def build_prompt(ipo: dict) -> str:
     )
 
 
+def _extract_outermost_json(text: str) -> str | None:
+    """Extract the first complete outermost JSON object from text using bracket counting."""
+    depth = 0
+    start = None
+    for i, c in enumerate(text):
+        if c == '{':
+            if depth == 0:
+                start = i
+            depth += 1
+        elif c == '}':
+            if depth > 0:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    return text[start:i + 1]
+    return None
+
+
 def run_claude(prompt: str) -> dict:
     """
     Call 'claude -p' with prompt via stdin. Returns parsed dict.
@@ -70,10 +87,10 @@ def run_claude(prompt: str) -> dict:
             timeout=120,
         )
         output = result.stdout or ""
-        match = re.search(r'\{.*\}', output, re.DOTALL)
-        if not match:
+        json_str = _extract_outermost_json(output)
+        if json_str is None:
             return {"error": "parse_failed", "raw": output[:500]}
-        return json.loads(match.group())
+        return json.loads(json_str)
     except subprocess.TimeoutExpired:
         return {"error": "timeout"}
     except json.JSONDecodeError as e:
@@ -128,7 +145,7 @@ def generate_all(data_dir: str = "data", skip_git: bool = False):
 
     if not skip_git:
         week = data.get("week", "unknown")
-        subprocess.run(["git", "add", "data/", "docs/"], check=True)
+        subprocess.run(["git", "add", latest, "docs/index.html"], check=True)
         subprocess.run(["git", "commit", "-m", f"feat: AI analysis {week}"], check=True)
         subprocess.run(["git", "push"], check=True)
         print("[generate] Pushed. View at https://dgsirius.github.io/ipo-monitor")
