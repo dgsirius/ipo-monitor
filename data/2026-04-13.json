@@ -1,7 +1,7 @@
 {
   "week": "2026-04-13",
   "generated_at": "2026-04-13T07:17:56.244684Z",
-  "ai_analyzed_at": null,
+  "ai_analyzed_at": "2026-04-13T08:36:20.534776Z",
   "ipo_count": 7,
   "ipos": [
     {
@@ -16,7 +16,9 @@
       "revenue": "-",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     },
     {
       "ipo_date": "2026-04-15",
@@ -30,7 +32,9 @@
       "revenue": "2.10M",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     },
     {
       "ipo_date": "2026-04-16",
@@ -44,7 +48,9 @@
       "revenue": "1.59B",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     },
     {
       "ipo_date": "2026-04-16",
@@ -58,7 +64,9 @@
       "revenue": "3.34B",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     },
     {
       "ipo_date": "2026-04-17",
@@ -72,7 +80,9 @@
       "revenue": "432.93M",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     },
     {
       "ipo_date": "2026-04-17",
@@ -86,7 +96,9 @@
       "revenue": "55.65M",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     },
     {
       "ipo_date": "2026-04-24",
@@ -100,7 +112,9 @@
       "revenue": "18.74M",
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
-      "analysis": null
+      "analysis": {
+        "error": "[WinError 2] 系统找不到指定的文件。"
+      }
     }
   ]
 }
