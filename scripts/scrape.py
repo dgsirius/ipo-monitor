@@ -174,3 +174,48 @@ def fetch_s1_excerpt(url: str) -> str:
                 break
 
     return "\n\n".join(parts)[:3000]  # hard cap per spec §5.3
+
+
+def run_scrape(data_dir: str = "data", week_date: str | None = None) -> str:
+    """
+    Full scrape pipeline. Returns path to written JSON file.
+    week_date: 'YYYY-MM-DD', defaults to today.
+    """
+    if week_date is None:
+        week_date = datetime.utcnow().strftime("%Y-%m-%d")
+
+    print(f"[scrape] Fetching IPO calendar...")
+    ipos = parse_ipo_calendar()
+    print(f"[scrape] Found {len(ipos)} IPOs")
+
+    for ipo in ipos:
+        symbol = ipo.get("symbol", "")
+        company = ipo.get("company", "")
+        print(f"[scrape] Searching EDGAR for {symbol} ({company})...")
+        filing_url = search_edgar(symbol, company)
+        ipo["sec_filing_url"] = filing_url
+        if filing_url:
+            print(f"[scrape] Fetching S-1 excerpt for {symbol}...")
+            ipo["sec_raw_excerpt"] = fetch_s1_excerpt(filing_url)
+        else:
+            print(f"[scrape] No EDGAR filing found for {symbol}")
+            ipo["sec_raw_excerpt"] = None
+
+    os.makedirs(data_dir, exist_ok=True)
+    out_path = os.path.join(data_dir, f"{week_date}.json")
+    payload = {
+        "week": week_date,
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "ai_analyzed_at": None,
+        "ipo_count": len(ipos),
+        "ipos": ipos,
+    }
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"[scrape] Wrote {out_path}")
+    return out_path
+
+
+if __name__ == "__main__":
+    week = os.environ.get("WEEK_DATE")
+    run_scrape(week_date=week)

@@ -161,3 +161,33 @@ def test_fetch_s1_excerpt_returns_empty_on_failure():
         excerpt = fetch_s1_excerpt("https://www.sec.gov/bogus.htm")
 
     assert excerpt == ""
+
+
+import json
+import tempfile
+from pathlib import Path
+from scripts.scrape import run_scrape
+
+
+def test_run_scrape_creates_json(tmp_path):
+    ipos = [
+        {
+            "symbol": "ABCD", "company": "Acme Corp", "ipo_date": "2026-04-15",
+            "exchange": "NASDAQ", "price_range": "$14-16", "shares_offered": "10M",
+            "deal_size": "$150M", "market_cap": "$800M", "revenue": "$120M",
+            "sec_filing_url": None, "sec_raw_excerpt": None, "analysis": None
+        }
+    ]
+    with patch("scripts.scrape.parse_ipo_calendar", return_value=ipos), \
+         patch("scripts.scrape.search_edgar", return_value="https://sec.gov/test.htm"), \
+         patch("scripts.scrape.fetch_s1_excerpt", return_value="Business excerpt"):
+
+        output_path = run_scrape(data_dir=str(tmp_path), week_date="2026-04-13")
+
+    assert output_path.endswith("2026-04-13.json")
+    data = json.loads(Path(output_path).read_text())
+    assert data["week"] == "2026-04-13"
+    assert data["ipo_count"] == 1
+    assert data["ipos"][0]["symbol"] == "ABCD"
+    assert data["ipos"][0]["sec_raw_excerpt"] == "Business excerpt"
+    assert data["ipos"][0]["analysis"] is None
