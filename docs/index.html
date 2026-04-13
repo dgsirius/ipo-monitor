@@ -47,7 +47,7 @@ footer { text-align: center; padding: 12px; font-size: 12px; color: #888; border
 <body>
 <header>
   <h1>IPO Monitor</h1>
-  <span class="badge basic" id="version-badge">基础版</span>
+  <span class="badge full" id="version-badge">完整版</span>
   <input type="text" id="search" placeholder="搜索公司代码或名称...">
 </header>
 <div class="layout">
@@ -56,11 +56,11 @@ footer { text-align: center; padding: 12px; font-size: 12px; color: #888; border
 </div>
 <footer>
   数据来源：stockanalysis.com · SEC EDGAR &nbsp;|&nbsp;
-  基础版更新：<span id="basic-ts">2026-04-13 06:12</span>
-  <span id="ai-ts-wrap">&nbsp;|&nbsp; AI分析更新：<span id="ai-ts">—</span></span>
+  基础版更新：<span id="basic-ts">2026-04-13 06:00</span>
+  <span id="ai-ts-wrap">&nbsp;|&nbsp; AI分析更新：<span id="ai-ts">2026-04-13 05:41</span></span>
 </footer>
 <script>
-const DATA = [{"week": "2026-04-13", "generated_at": "2026-04-13T06:12:24.043474Z", "ai_analyzed_at": null, "ipo_count": 7, "ipos": [{"ipo_date": "2026-04-14", "symbol": "MYX", "company": "Maywood Acquisition Corp. 2", "exchange": "NASDAQ", "price_range": "$10.00", "shares_offered": "10,000,000", "deal_size": "100.00M", "market_cap": "140.04M", "revenue": "-", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}, {"ipo_date": "2026-04-15", "symbol": "EMI", "company": "Encore Medical, Inc.", "exchange": "NYSEAMERICAN", "price_range": "$5.00", "shares_offered": "3,000,000", "deal_size": "15.00M", "market_cap": "48.72M", "revenue": "2.10M", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}, {"ipo_date": "2026-04-16", "symbol": "ARXS", "company": "Arxis, Inc.", "exchange": "NASDAQ", "price_range": "$25.00 - $28.00", "shares_offered": "37,735,849", "deal_size": "1,000.00M", "market_cap": "10.64B", "revenue": "1.59B", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}, {"ipo_date": "2026-04-16", "symbol": "MAIR", "company": "Madison Air Solutions Corporation", "exchange": "NYSE", "price_range": "$25.00 - $27.00", "shares_offered": "82,692,308", "deal_size": "2.15B", "market_cap": "12.71B", "revenue": "3.34B", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}, {"ipo_date": "2026-04-17", "symbol": "AVEX", "company": "AEVEX Corp.", "exchange": "NYSE", "price_range": "$18.00 - $21.00", "shares_offered": "16,000,000", "deal_size": "312.00M", "market_cap": "2.18B", "revenue": "432.93M", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}, {"ipo_date": "2026-04-17", "symbol": "BWGC", "company": "BW Industrial Holdings Inc.", "exchange": "NYSEAMERICAN", "price_range": "$6.00 - $7.00", "shares_offered": "2,625,000", "deal_size": "17.06M", "market_cap": "143.16M", "revenue": "55.65M", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}, {"ipo_date": "2026-04-24", "symbol": "RIKU", "company": "Riku Dining Group Limited", "exchange": "NASDAQ", "price_range": "$4.00 - $6.00", "shares_offered": "5,000,000", "deal_size": "25.00M", "market_cap": "115.00M", "revenue": "18.74M", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": null}]}];
+const DATA = [{"week": "2026-04-13", "generated_at": "2026-04-13T06:00:00Z", "ai_analyzed_at": "2026-04-13T05:41:00.632766Z", "ipo_count": 1, "ipos": [{"symbol": "DONE", "company": "Done Corp", "ipo_date": "2026-04-15", "exchange": "NASDAQ", "price_range": "$10-12", "shares_offered": "1M", "deal_size": "$11M", "market_cap": "$100M", "revenue": "$20M", "sec_filing_url": null, "sec_raw_excerpt": null, "analysis": {"industry": "Already done", "business_summary": "x", "financials": {}, "investors": {}, "risks": [], "claude_summary": "y"}}]}];
 
 function esc(s) {
   if (s == null) return "—";
