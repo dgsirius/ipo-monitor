@@ -26,8 +26,13 @@ header h1 { font-size: 18px; font-weight: 700; }
 .week-header:hover { background: #f0f0f0; }
 .week-companies { display: none; }
 .week-companies.open { display: block; }
-.sidebar-company { padding: 5px 20px; font-size: 13px; cursor: pointer; color: #1a73e8; }
+.sidebar-company { padding: 5px 16px; font-size: 12px; cursor: pointer; color: #1a73e8; line-height: 1.4; }
 .sidebar-company:hover { background: #e8f0fe; }
+.sidebar-company .sym { font-weight: 700; }
+.sidebar-company .co { color: #888; font-size: 11px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#gen-btn { display: none; margin-left: 8px; padding: 6px 14px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap; }
+#gen-btn:disabled { background: #888; cursor: not-allowed; }
+#gen-log { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a2e; color: #aef; font-size: 12px; padding: 8px 16px; max-height: 120px; overflow-y: auto; z-index: 200; white-space: pre-wrap; }
 #content { flex: 1; overflow-y: auto; padding: 16px; }
 .card { background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; padding: 16px; margin-bottom: 12px; scroll-margin-top: 16px; }
 .card.highlight { border-color: #1a73e8; box-shadow: 0 0 0 2px #e8f0fe; }
@@ -55,6 +60,7 @@ footer { text-align: center; padding: 12px; font-size: 12px; color: #888; border
 <header>
   <h1>IPO Monitor</h1>
   <span class="badge {BADGE_CLASS}" id="version-badge">{BADGE_TEXT}</span>
+  <button id="gen-btn" onclick="runGenerate()">🤖 生成完整版</button>
   <input type="text" id="search" placeholder="搜索公司代码或名称...">
 </header>
 <div class="layout">
@@ -66,6 +72,7 @@ footer { text-align: center; padding: 12px; font-size: 12px; color: #888; border
   基础版更新：<span id="basic-ts">{BASIC_TS}</span>
   <span id="ai-ts-wrap">&nbsp;|&nbsp; AI分析更新：<span id="ai-ts">{AI_TS}</span></span>
 </footer>
+<div id="gen-log"></div>
 <script>
 const DATA = {DATA_JSON};
 
@@ -144,7 +151,7 @@ DATA.forEach(function(week, wi) {
     dates[date].forEach(function(ipo) {
       var a = document.createElement("div");
       a.className = "sidebar-company";
-      a.textContent = ipo.symbol;
+      a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span><span class="co">' + esc(ipo.company) + '</span>';
       a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
       companies.appendChild(a);
     });
@@ -175,6 +182,37 @@ DATA.forEach(function(week) {
   });
 });
 
+// Local-only generate button
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+  document.getElementById("gen-btn").style.display = "inline-block";
+}
+
+function runGenerate() {
+  var btn = document.getElementById("gen-btn");
+  var log = document.getElementById("gen-log");
+  btn.disabled = true;
+  btn.textContent = "⏳ 生成中...";
+  log.style.display = "block";
+  log.textContent = "正在启动 generate.py...";
+  fetch("/run-generate", {method: "POST"})
+    .then(function(r) { return r.json(); })
+    .then(function() { pollStatus(); })
+    .catch(function(e) { log.textContent = "错误: " + e; btn.disabled = false; btn.textContent = "🤖 生成完整版"; });
+}
+
+function pollStatus() {
+  fetch("/status").then(function(r) { return r.json(); }).then(function(d) {
+    var log = document.getElementById("gen-log");
+    if (d.log) log.textContent = d.log;
+    if (d.running) {
+      setTimeout(pollStatus, 2000);
+    } else {
+      document.getElementById("gen-btn").textContent = "✅ 完成，刷新中...";
+      setTimeout(function() { location.reload(); }, 1500);
+    }
+  });
+}
+
 // Search
 document.getElementById("search").addEventListener("input", function() {
   var q = this.value.toLowerCase().trim();
@@ -182,7 +220,9 @@ document.getElementById("search").addEventListener("input", function() {
     card.classList.toggle("hidden", q !== "" && !card.textContent.toLowerCase().includes(q));
   });
   document.querySelectorAll(".sidebar-company").forEach(function(a) {
-    a.classList.toggle("hidden", q !== "" && !a.textContent.toLowerCase().includes(q));
+    var text = (a.querySelector(".sym") ? a.querySelector(".sym").textContent : a.textContent).toLowerCase();
+    var co = (a.querySelector(".co") ? a.querySelector(".co").textContent : "").toLowerCase();
+    a.classList.toggle("hidden", q !== "" && !text.includes(q) && !co.includes(q));
   });
 });
 </script>
