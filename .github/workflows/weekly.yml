@@ -1,0 +1,51 @@
+name: Weekly IPO Update
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'   # Sunday 22:00 UTC = Monday 06:00 BJT
+  workflow_dispatch:          # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Scrape IPO data
+        # Note: WEEK_DATE evaluated in shell (not env: block) to enable $(date +...) expansion
+        # GitHub Actions env: block treats values as literals, not shell expressions
+        run: |
+          export WEEK_DATE=$(date +%Y-%m-%d)
+          python scripts/scrape.py
+
+      - name: Build basic HTML
+        run: python scripts/build.py --mode basic
+
+      - name: Commit and push
+        run: |
+          git config user.name "ipo-monitor-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/ docs/
+          git commit -m "chore: weekly update $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push
+
+      - name: Send notification
+        run: |
+          export IPO_DATA_FILE="data/$(date +%Y-%m-%d).json"
+          python scripts/notify.py
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
