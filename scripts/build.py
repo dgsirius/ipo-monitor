@@ -134,31 +134,29 @@ function scrollToCard(symbol) {
   if (card) { card.classList.add("highlight"); card.scrollIntoView({ behavior: "smooth", block: "start" }); }
 }
 
-// Build sidebar
+// Build sidebar — group by week, list all tickers under each week
 var sidebar = document.getElementById("sidebar");
-DATA.forEach(function(week, wi) {
-  var dates = {};
-  week.ipos.forEach(function(ipo) {
-    if (!dates[ipo.ipo_date]) dates[ipo.ipo_date] = [];
-    dates[ipo.ipo_date].push(ipo);
+DATA.forEach(function(week) {
+  var label = week.week || (week.ipos[0] && week.ipos[0].ipo_date) || "—";
+  var header = document.createElement("div");
+  header.className = "week-header";
+  header.innerHTML = "<span>📅 " + label + " (" + week.ipos.length + ")</span><span class=\"toggle-arrow\">▾</span>";
+  var companies = document.createElement("div");
+  companies.className = "week-companies open";
+  var sorted = week.ipos.slice().sort(function(a, b) { return a.ipo_date < b.ipo_date ? -1 : a.ipo_date > b.ipo_date ? 1 : 0; });
+  sorted.forEach(function(ipo) {
+    var a = document.createElement("div");
+    a.className = "sidebar-company";
+    a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span><span class="co">' + esc(ipo.ipo_date.slice(5)) + ' · ' + esc(ipo.company) + '</span>';
+    a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
+    companies.appendChild(a);
   });
-  Object.keys(dates).sort().reverse().forEach(function(date) {
-    var header = document.createElement("div");
-    header.className = "week-header";
-    header.innerHTML = "<span>📅 " + date + "</span><span>▾</span>";
-    var companies = document.createElement("div");
-    companies.className = "week-companies" + (wi === 0 ? " open" : "");
-    dates[date].forEach(function(ipo) {
-      var a = document.createElement("div");
-      a.className = "sidebar-company";
-      a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span><span class="co">' + esc(ipo.company) + '</span>';
-      a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
-      companies.appendChild(a);
-    });
-    header.addEventListener("click", function() { companies.classList.toggle("open"); });
-    sidebar.appendChild(header);
-    sidebar.appendChild(companies);
+  header.addEventListener("click", function() {
+    companies.classList.toggle("open");
+    header.querySelector(".toggle-arrow").textContent = companies.classList.contains("open") ? "▾" : "▸";
   });
+  sidebar.appendChild(header);
+  sidebar.appendChild(companies);
 });
 
 // Build cards
@@ -203,7 +201,7 @@ function runGenerate() {
 function pollStatus() {
   fetch("/status").then(function(r) { return r.json(); }).then(function(d) {
     var log = document.getElementById("gen-log");
-    if (d.log) log.textContent = d.log;
+    if (d.log) { log.textContent = d.log; log.scrollTop = log.scrollHeight; }
     if (d.running) {
       setTimeout(pollStatus, 2000);
     } else {

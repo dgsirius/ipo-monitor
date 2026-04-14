@@ -298,9 +298,40 @@
       "sec_filing_url": null,
       "sec_raw_excerpt": null,
       "analysis": {
-        "error": "timeout"
+        "industry": "Restaurant / Food Service",
+        "business_summary": "Riku Dining Group Limited（RIKU）是一家亚洲餐饮集团，主要经营连锁餐厅业务，提供餐饮服务。公司拟于NASDAQ上市，业务模式以堂食及外卖为主，目标市场可能覆盖北美及亚太地区。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "招股书摘录不可用，无法提取具体风险因素；餐饮行业普遍面临原材料成本上涨风险",
+          "餐饮连锁扩张依赖稳定的门店运营与人力资源管理，人员流动率高可能影响服务质量",
+          "小市值海外公司在NASDAQ上市面临监管合规压力、流动性不足及做空机构关注等风险"
+        ],
+        "claude_summary": "由于招股书摘录不可用，无法对RIKU进行基于财务数据的深度评估。从公司名称判断，属于亚洲餐饮赛道，赛道竞争激烈、利润率偏低。建议投资者在正式招股书披露后，重点核查营收规模、盈利能力及实际门店数据后再作判断。"
       }
     }
   ],
-  "ai_analyzed_at": "2026-04-14T01:50:53.016862Z"
+  "ai_analyzed_at": "2026-04-14T03:40:31.029483Z"
 }

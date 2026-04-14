@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from datetime import datetime
@@ -73,13 +74,15 @@ def run_claude(prompt: str) -> dict:
     Call 'claude -p' with prompt via stdin. Returns parsed dict.
     On failure returns {"error": "..."}.
 
-    Note: spec mentions --input-file temp file to avoid Windows ARG_MAX.
-    We use subprocess stdin (input=) instead — this bypasses ARG_MAX entirely
-    (stdin pipe has no length limit on Windows) and is cleaner than temp files.
+    Uses shutil.which() to resolve full executable path so Windows .CMD
+    wrappers (npm-installed claude.cmd) are found by subprocess.
     """
+    claude_exe = shutil.which("claude")
+    if not claude_exe:
+        return {"error": "claude executable not found in PATH"}
     try:
         result = subprocess.run(
-            ["claude", "-p"],
+            [claude_exe, "-p"],
             input=prompt,
             capture_output=True,
             text=True,
