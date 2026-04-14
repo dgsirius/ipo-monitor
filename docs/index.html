@@ -133,7 +133,7 @@ DATA.forEach(function(week) {
   var label = week.week || (week.ipos[0] && week.ipos[0].ipo_date) || "—";
   var header = document.createElement("div");
   header.className = "week-header";
-  header.innerHTML = "<span>📅 " + label + " (" + week.ipos.length + ")</span><span class="toggle-arrow">▾</span>";
+  header.innerHTML = '<span>📅 ' + label + ' (' + week.ipos.length + ')</span><span class="toggle-arrow">▾</span>';
   var companies = document.createElement("div");
   companies.className = "week-companies open";
   var sorted = week.ipos.slice().sort(function(a, b) { return a.ipo_date < b.ipo_date ? -1 : a.ipo_date > b.ipo_date ? 1 : 0; });
