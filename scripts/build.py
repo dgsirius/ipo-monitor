@@ -119,9 +119,11 @@ function buildFunding(ipo) {
 function buildSummary(ipo) {
   if (!ipo.analysis || !ipo.analysis.claude_summary)
     return collapsible("Claude 分析摘要", '<span class="pending">AI 分析待生成</span>');
+  var highlights = (ipo.analysis.highlights || []).map(function(h) { return '<li>' + esc(h) + '</li>'; }).join("");
   var risks = (ipo.analysis.risks || []).map(function(r) { return '<li>' + esc(r) + '</li>'; }).join("");
   return collapsible("Claude 分析摘要",
     '<p><strong>业务：</strong>' + esc(ipo.analysis.business_summary) + '</p>' +
+    (highlights ? '<p style="margin-top:6px"><strong>亮点：</strong></p><ul style="padding-left:16px;color:#27ae60">' + highlights + '</ul>' : '') +
     '<p style="margin-top:6px"><strong>风险：</strong></p>' +
     '<ul style="padding-left:16px">' + risks + '</ul>' +
     '<p style="margin-top:6px"><strong>综合评价：</strong>' + esc(ipo.analysis.claude_summary) + '</p>');
@@ -147,7 +149,7 @@ DATA.forEach(function(week) {
   var label = week.week || sorted[0].ipo_date.slice(0, 7);
   var header = document.createElement("div");
   header.className = "week-header";
-  header.innerHTML = '<span>📅 ' + label + ' 本周</span><span class="toggle-arrow">▾</span>';
+  header.innerHTML = '<span>📅 ' + label + '</span><span class="toggle-arrow">▾</span>';
   var companies = document.createElement("div");
   companies.className = "week-companies open";
   sorted.forEach(function(ipo) {
