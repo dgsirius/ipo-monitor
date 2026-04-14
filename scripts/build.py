@@ -82,7 +82,7 @@ function esc(s) {
 }
 
 function collapsible(title, bodyHtml) {
-  return '<div class="collapsible"><div class="collapsible-header" onclick="toggleSection(this)">' + title + '</div><div class="collapsible-body">' + bodyHtml + '</div></div>';
+  return '<div class="collapsible"><div class="collapsible-header open" onclick="toggleSection(this)">' + title + '</div><div class="collapsible-body open">' + bodyHtml + '</div></div>';
 }
 
 function buildFinancials(ipo) {
@@ -134,29 +134,34 @@ function scrollToCard(symbol) {
   if (card) { card.classList.add("highlight"); card.scrollIntoView({ behavior: "smooth", block: "start" }); }
 }
 
-// Build sidebar — group by week, list all tickers under each week
+// Build sidebar — group by IPO date, all dates expanded by default
 var sidebar = document.getElementById("sidebar");
 DATA.forEach(function(week) {
-  var label = week.week || (week.ipos[0] && week.ipos[0].ipo_date) || "—";
-  var header = document.createElement("div");
-  header.className = "week-header";
-  header.innerHTML = '<span>📅 ' + label + ' (' + week.ipos.length + ')</span><span class="toggle-arrow">▾</span>';
-  var companies = document.createElement("div");
-  companies.className = "week-companies open";
-  var sorted = week.ipos.slice().sort(function(a, b) { return a.ipo_date < b.ipo_date ? -1 : a.ipo_date > b.ipo_date ? 1 : 0; });
-  sorted.forEach(function(ipo) {
-    var a = document.createElement("div");
-    a.className = "sidebar-company";
-    a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span><span class="co">' + esc(ipo.ipo_date.slice(5)) + ' · ' + esc(ipo.company) + '</span>';
-    a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
-    companies.appendChild(a);
+  var dates = {};
+  week.ipos.forEach(function(ipo) {
+    if (!dates[ipo.ipo_date]) dates[ipo.ipo_date] = [];
+    dates[ipo.ipo_date].push(ipo);
   });
-  header.addEventListener("click", function() {
-    companies.classList.toggle("open");
-    header.querySelector(".toggle-arrow").textContent = companies.classList.contains("open") ? "▾" : "▸";
+  Object.keys(dates).sort().forEach(function(date) {
+    var header = document.createElement("div");
+    header.className = "week-header";
+    header.innerHTML = '<span>📅 ' + date.slice(5) + ' (' + dates[date].length + ')</span><span class="toggle-arrow">▾</span>';
+    var companies = document.createElement("div");
+    companies.className = "week-companies open";
+    dates[date].forEach(function(ipo) {
+      var a = document.createElement("div");
+      a.className = "sidebar-company";
+      a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span><span class="co">' + esc(ipo.company) + '</span>';
+      a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
+      companies.appendChild(a);
+    });
+    header.addEventListener("click", function() {
+      companies.classList.toggle("open");
+      header.querySelector(".toggle-arrow").textContent = companies.classList.contains("open") ? "▾" : "▸";
+    });
+    sidebar.appendChild(header);
+    sidebar.appendChild(companies);
   });
-  sidebar.appendChild(header);
-  sidebar.appendChild(companies);
 });
 
 // Build cards
