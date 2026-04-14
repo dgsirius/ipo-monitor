@@ -85,11 +85,15 @@ function collapsible(title, bodyHtml) {
   return '<div class="collapsible"><div class="collapsible-header open" onclick="toggleSection(this)">' + title + '</div><div class="collapsible-body open">' + bodyHtml + '</div></div>';
 }
 
+function fmt3y(arr) {
+  if (!Array.isArray(arr)) return "—";
+  return arr.map(function(v) { return v == null ? "—" : v; }).join(" → ");
+}
 function buildFinancials(ipo) {
   if (!ipo.analysis) return collapsible("基本面", '<span class="pending">AI 分析待生成</span>');
   var f = ipo.analysis.financials || {};
-  var rev = Array.isArray(f.revenue_3y) ? f.revenue_3y.join(" → ") : "—";
-  var ni = Array.isArray(f.net_income_3y) ? f.net_income_3y.join(" → ") : "—";
+  var rev = fmt3y(f.revenue_3y);
+  var ni = fmt3y(f.net_income_3y);
   return collapsible("基本面", '<div class="fin-row">' +
     '<div class="fin-item"><div class="fin-label">收入趋势(3Y)</div><div class="fin-value">' + esc(rev) + '</div></div>' +
     '<div class="fin-item"><div class="fin-label">净利润趋势(3Y)</div><div class="fin-value">' + esc(ni) + '</div></div>' +
@@ -134,34 +138,32 @@ function scrollToCard(symbol) {
   if (card) { card.classList.add("highlight"); card.scrollIntoView({ behavior: "smooth", block: "start" }); }
 }
 
-// Build sidebar — group by IPO date, all dates expanded by default
+// Build sidebar — one section per week, all tickers listed sorted by IPO date
 var sidebar = document.getElementById("sidebar");
 DATA.forEach(function(week) {
-  var dates = {};
-  week.ipos.forEach(function(ipo) {
-    if (!dates[ipo.ipo_date]) dates[ipo.ipo_date] = [];
-    dates[ipo.ipo_date].push(ipo);
+  var label = week.week || "—";
+  var header = document.createElement("div");
+  header.className = "week-header";
+  header.innerHTML = '<span>📅 ' + label + '</span><span class="toggle-arrow">▾</span>';
+  var companies = document.createElement("div");
+  companies.className = "week-companies open";
+  var sorted = week.ipos.slice().sort(function(a, b) {
+    return a.ipo_date < b.ipo_date ? -1 : a.ipo_date > b.ipo_date ? 1 : 0;
   });
-  Object.keys(dates).sort().forEach(function(date) {
-    var header = document.createElement("div");
-    header.className = "week-header";
-    header.innerHTML = '<span>📅 ' + date.slice(5) + ' (' + dates[date].length + ')</span><span class="toggle-arrow">▾</span>';
-    var companies = document.createElement("div");
-    companies.className = "week-companies open";
-    dates[date].forEach(function(ipo) {
-      var a = document.createElement("div");
-      a.className = "sidebar-company";
-      a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span><span class="co">' + esc(ipo.company) + '</span>';
-      a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
-      companies.appendChild(a);
-    });
-    header.addEventListener("click", function() {
-      companies.classList.toggle("open");
-      header.querySelector(".toggle-arrow").textContent = companies.classList.contains("open") ? "▾" : "▸";
-    });
-    sidebar.appendChild(header);
-    sidebar.appendChild(companies);
+  sorted.forEach(function(ipo) {
+    var a = document.createElement("div");
+    a.className = "sidebar-company";
+    a.innerHTML = '<span class="sym">' + esc(ipo.symbol) + '</span>'
+      + '<span class="co">' + esc(ipo.ipo_date.slice(5)) + '  ' + esc(ipo.company) + '</span>';
+    a.addEventListener("click", function() { scrollToCard(ipo.symbol); });
+    companies.appendChild(a);
   });
+  header.addEventListener("click", function() {
+    companies.classList.toggle("open");
+    header.querySelector(".toggle-arrow").textContent = companies.classList.contains("open") ? "▾" : "▸";
+  });
+  sidebar.appendChild(header);
+  sidebar.appendChild(companies);
 });
 
 // Build cards
