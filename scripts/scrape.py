@@ -152,16 +152,27 @@ def _get_main_doc_url(cik: str, accession_no: str) -> str | None:
 
 
 SECTION_KEYWORDS = {
-    "business": ["BUSINESS"],
+    "business": ["OUR BUSINESS", "BUSINESS OVERVIEW", "BUSINESS"],
+    "financials": [
+        "SELECTED CONSOLIDATED FINANCIAL",
+        "SELECTED FINANCIAL DATA",
+        "SUMMARY CONSOLIDATED FINANCIAL",
+        "SUMMARY FINANCIAL DATA",
+        "RESULTS OF OPERATIONS",
+        "FINANCIAL HIGHLIGHTS",
+    ],
+    "funding": [
+        "PRIOR SALES", "PRIOR ISSUANCES", "RECENT SALES OF UNREGISTERED",
+        "PRINCIPAL STOCKHOLDERS", "CAPITALIZATION",
+    ],
     "risks": ["RISK FACTORS"],
-    "financials": ["RESULTS OF OPERATIONS", "SELECTED FINANCIAL DATA", "FINANCIAL STATEMENTS"],
 }
 
 
 def fetch_s1_excerpt(url: str) -> str:
     """
-    Download S-1 HTML and extract Business + Risk Factors + Financials sections.
-    Returns combined text (<=3000 chars). Returns "" on any failure.
+    Download S-1 HTML and extract key sections (business, financials, funding, risks).
+    Returns combined text (<=12000 chars). Returns "" on any failure.
     """
     try:
         resp = requests.get(url, headers=HEADERS, timeout=30)
@@ -177,11 +188,11 @@ def fetch_s1_excerpt(url: str) -> str:
         for kw in keywords:
             idx = full_text.upper().find(kw)
             if idx != -1:
-                excerpt = full_text[idx: idx + 1000].strip()
-                parts.append(excerpt)
+                excerpt = full_text[idx: idx + 3000].strip()
+                parts.append(f"[{section_name.upper()}]\n{excerpt}")
                 break
 
-    return "\n\n".join(parts)[:3000]  # hard cap per spec §5.3
+    return "\n\n".join(parts)[:12000]
 
 
 def run_scrape(data_dir: str = "data", week_date: str | None = None) -> str:
