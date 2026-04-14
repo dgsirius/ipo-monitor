@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 CALENDAR_URL = "https://stockanalysis.com/ipos/calendar/"
 EDGAR_SEARCH_URL = "https://efts.sec.gov/LATEST/search-index"
 HEADERS = {
-    "User-Agent": "ipo-monitor/1.0 dgsirius@users.noreply.github.com",
+    "User-Agent": "IPOMonitor research@ipomonitor.io",
     "Accept-Language": "en-US,en;q=0.9",
 }
 

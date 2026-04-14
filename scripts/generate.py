@@ -83,17 +83,29 @@ def run_claude(prompt: str) -> dict:
     try:
         result = subprocess.run(
             [claude_exe, "-p"],
-            input=prompt,
+            input=prompt.encode("utf-8"),
             capture_output=True,
-            text=True,
-            encoding="utf-8",
             timeout=120,
         )
-        output = result.stdout or ""
+        raw_bytes = result.stdout or b""
+        # Try UTF-8 first, fall back to GBK (Windows default CJK encoding)
+        for enc in ("utf-8", "gbk", "utf-8-sig"):
+            try:
+                output = raw_bytes.decode(enc)
+                break
+            except UnicodeDecodeError:
+                continue
+        else:
+            output = raw_bytes.decode("utf-8", errors="replace")
         json_str = _extract_outermost_json(output)
         if json_str is None:
             return {"error": "parse_failed", "raw": output[:500]}
-        return json.loads(json_str)
+        try:
+            return json.loads(json_str)
+        except json.JSONDecodeError:
+            # Remove ASCII control chars (except \t\n\r), then retry
+            cleaned = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', json_str)
+            return json.loads(cleaned)
     except subprocess.TimeoutExpired:
         return {"error": "timeout"}
     except json.JSONDecodeError as e:

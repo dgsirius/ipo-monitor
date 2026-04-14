@@ -1,0 +1,507 @@
+{
+  "week": "2026-04-14",
+  "generated_at": "2026-04-14T04:35:34.559793Z",
+  "ipo_count": 10,
+  "ipos": [
+    {
+      "ipo_date": "2026-04-14",
+      "symbol": "MYX",
+      "company": "Maywood Acquisition Corp. 2",
+      "exchange": "NASDAQ",
+      "price_range": "$10.00",
+      "shares_offered": "10,000,000",
+      "deal_size": "100.00M",
+      "market_cap": "140.04M",
+      "revenue": "-",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2087656/000168316826001227/myx_s1a3.htm",
+      "sec_raw_excerpt": "Business Filings Incorporated\n8020 Excelsior\nDrive, Suite 200\nMadison, WI 53717, USA\nPhone: 800-981-7183\n(Name, address and telephone number of agent for\nservice)\nApproximate date of commencement of proposed sale to the public:\nAs\nsoon as practicable after this Registration Statement becomes effective.\nIf any of the securities being registered on this Form are to be offered\non a delayed or continuous basis pursuant to Rule 415 under the Securities Act of 1933, please check the following box:\n☒\nIf this form is filed to register additional securities for an offering\npursuant to Rule 462(b) under the Securities Act, check the following box and list the Securities Act registration statement number of\nthe earlier effective registration statement for the same offering: ☐\nIf this form is a post-effective registration statement filed pursuant\nto Rule 462(c) under the Securities Act, check the following box and list the Securities Act registration statement number of the earlier\neffective regis\n\nRisk Factors\nsection, beginning on page 5.\nMyx, Inc. qualifies as an “emerging growth company” as\ndefined in the Jumpstart Our Business Startups Act (the “JOBS Act”).\nThe Company has irrevocably elected not to use the extended transition\nperiod for complying with new or revised accounting standards provided pursuant to Section 7(a)(2)(B) of the Securities Act.\nNeither the U.S. Securities and Exchange Commission nor any State securities\ndivision has approved or disapproved these securities or determined if this prospectus is truthful or complete. Any representation to\nthe contrary is a criminal offense.\nTHE INFORMATION IN THIS PROSPECTUS IS NOT COMPLETE AND MAY BE CHANGED.\nWE MAY NOT SELL THESE SECURITIES UNTIL THE REGISTRATION STATEMENT FILED WITH THE U.S. SECURITIES AND EXCHANGE COMMISSION IS EFFECTIVE.\nTHIS PROSPECTUS IS NOT AN OFFER TO SELL THESE SECURITIES, AND IT IS NOT SOLICITING PURCHASE OF THE GIVEN SECURITIES IN ANY STATE WHERE\nTHE OFFER OR SALE IS NOT PERMITTED.\nSUBJECT TO CO\n\nRESULTS OF OPERATIONS\n26\nLIQUIDITY AND CAPITAL RESOURCES\n28\nDESCRIPTION OF BUSINESS\n29\nLEGAL PROCEEDINGS\n32\nDIRECTORS, EXECUTIVE OFFICERS, PROMOTER AND CONTROL PERSONS\n33\nTERM OF OFFICE\n36\nDIRECTOR INDEPENDENCE\n36\nCOMMITTEES OF THE BOARD OF DIRECTORS\n36\nEXECUTIVE COMPENSATION\n37\nCERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS\n38\nSECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT\n40\nPLAN OF DISTRIBUTION\n41\nDESCRIPTION OF SECURITIES\n43\nINDEMNIFICATION\n4\n4\nINTERESTS OF NAMED EXPERTS AND COUNSEL\n4\n4\nEXPERTS\n4\n4\nLEGAL MATTERS\n44\nAVAILABLE INFORMATION\n4\n4\nCHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE\n45\nFINANCIAL STATEMENTS\n45\nINDEX TO THE FINANCIAL STATEMENTS\nF-1\nWe have not authorized any dealer, salesperson or other person\nto give any information or represent anything not contained in this prospectus. You should not rely on any unauthorized information. This\nprospectus is not an offer to sell or buy any shares in any state or other jur",
+      "analysis": {
+        "industry": "Special Purpose Acquisition Company (SPAC) / Blank Check Company",
+        "business_summary": "Maywood Acquisition Corp. 2（代码MYX）以新兴成长公司身份申请在NASDAQ上市，注册地为威斯康星州麦迪逊市。招股书摘录中业务描述章节内容未提供，具体经营方向无法确认。公司已选择不延用JOBS法案下的会计准则过渡期豁免。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "注册声明尚未生效，证券尚未获SEC或各州证券监管机构批准，存在发行不确定性",
+          "作为新兴成长公司，信息披露义务较轻，投资者可获取的财务与运营信息相对有限",
+          "招股书明确声明信息不完整且可能变更，当前摘录缺乏实质性业务与财务披露"
+        ],
+        "claude_summary": "所提供摘录仅含封面页声明与目录，缺乏业务描述、财务数据及具体风险因素内容，无法对公司基本面作有效评估。公司命名含'Acquisition Corp.'暗示可能为SPAC架构。建议获取完整招股书S-1全文，尤其是Business Description与Financial Statements章节后再行判断。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-15",
+      "symbol": "EMI",
+      "company": "Encore Medical, Inc.",
+      "exchange": "NYSEAMERICAN",
+      "price_range": "$5.00",
+      "shares_offered": "3,000,000",
+      "deal_size": "15.00M",
+      "market_cap": "48.72M",
+      "revenue": "2.10M",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/1876042/000119312525126208/d737521ds1a.htm",
+      "sec_raw_excerpt": "businesses to offer payment connectivity and\ndollar-backed financial services to more people in more places.185+ Countries where Circle supports wire transfers for minting and redeeming USDC 7 600M+ End-user wallet products with access to USDC 8 7. Circle Mint is currently available\nonly to institutions and is not available to individuals. 8. As of March 31, 2025.\nTable of Contents\nTable of contents\nFounders letter\n1\nGlossary\n6\nProspectus summary\n10\nRisk factors\n33\nCautionary statement regarding forward-looking statements\n82\nUse of proceeds\n84\nDividend policy\n85\nCapitalization\n86\nDilution\n87\nManagements discussion and analysis of financial condition and results of operations\n89\nBusiness\n130\nManagement\n168\nCompensation discussion & analysis\n174\nCertain relationships and related-party transactions\n200\nPrincipal and selling stockholders\n202\nDescription of capital stock\n207\nMaterial U.S. federal tax considerations for non-U.S. holders of Class A common stock\n216\nShares eligible for futur\n\nRisk factors\n beginning on page 34 of this prospectus.\nPer share\nTotal\nInitial public offering price\n$\n$\nUnderwriting discounts and commissions(1)\n$\n$\nProceeds to us, before expenses\n$\n$\nProceeds to the selling stockholders, before expenses\n$\n$\n(1)\nSee Underwriting for a description of all compensation payable to the underwriters.\nWe have granted the\nunderwriters an option for a period of 30 days to purchase up to 3,600,000 additional shares of Class A common stock to cover over-allotments.\nNeither the\nSecurities and Exchange Commission nor any state securities commission has approved or disapproved of these securities or determined if this prospectus is truthful or complete. Any representation to the contrary is a criminal offense.\nThe underwriters expect to deliver the shares to purchasers on or about     , 2025 through the book-entry facilities of The Depository Trust\nCompany.\nJ.P. Morgan\nCitigroup\nGoldman Sachs & Co. LLC\nBarclays\nDeutsche Bank Securities\nSOCIETE GENERALE\nBNY Cap\n\nresults of operations\n89\nBusiness\n130\nManagement\n168\nCompensation discussion & analysis\n174\nCertain relationships and related-party transactions\n200\nPrincipal and selling stockholders\n202\nDescription of capital stock\n207\nMaterial U.S. federal tax considerations for non-U.S. holders of Class A common stock\n216\nShares eligible for future sale\n219\nUnderwriting\n222\nChanges in and disagreements with accountants on accounting and financial\ndisclosure\n233\nLegal matters\n234\nExperts\n234\nWhere you can find more information\n235\nIndex to consolidated financial statements\nF-1\nOn July 1, 2024, we consummated an Irish High Court-approved scheme of arrangement, pursuant to which issued ordinary shares and\npreferred shares in the capital of Circle Internet Financial Limited were cancelled and, in connection with such cancellation, Circle Internet Group, Inc., a Delaware corporation, issued an equivalent number of shares of its capital stock of the\nsame class and series to then-shareholders of Circl",
+      "analysis": {
+        "industry": "Financial Technology / Stablecoin Infrastructure / Digital Payments",
+        "business_summary": "Circle互联网集团是USDC稳定币发行方，提供美元支持的支付连接服务，覆盖185+国家电汇，超6亿终端钱包可访问USDC，面向机构提供Circle Mint铸币与赎回服务，致力于扩展全球支付互联互通。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [
+            "J.P. Morgan",
+            "Citigroup",
+            "Goldman Sachs & Co. LLC",
+            "Barclays",
+            "Deutsche Bank Securities",
+            "Societe Generale",
+            "BNY Capital Markets"
+          ],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "稳定币监管框架尚未成熟，各司法管辖区政策差异可能限制USDC合规运营范围",
+          "加密货币市场高度波动，市场信心崩溃可能引发USDC大规模赎回压力",
+          "竞争激烈，Tether等其他稳定币及传统金融机构的数字货币项目可能侵蚀市场份额"
+        ],
+        "claude_summary": "Circle互联网集团拥有全球领先的USDC稳定币基础设施，185+国家覆盖体现强网络效应，承销阵容顶级（小摩、高盛、花旗）彰显机构认可度。公司于2024年完成爱尔兰法院批准的架构重组，迁至特拉华州，显示IPO筹备充分。监管不确定性与市场波动为主要风险，招股书摘录未含具体财务数据，无法评估估值合理性。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-16",
+      "symbol": "ARXS",
+      "company": "Arxis, Inc.",
+      "exchange": "NASDAQ",
+      "price_range": "$25.00 - $28.00",
+      "shares_offered": "37,735,849",
+      "deal_size": "1,000.00M",
+      "market_cap": "10.64B",
+      "revenue": "1.59B",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2093536/000119312526151122/d81728ds1a.htm",
+      "sec_raw_excerpt": "Business\n114\nManagement\n131\nExecutive and Director Compensation\n136\nCertain Relationships and Related-Party Transactions\n145\nPrincipal Stockholders\n152\nDescription of Capital Stock\n154\nMaterial U.S. Federal Tax Considerations for\nNon-U.S.\nHolders\n163\nShares Eligible for Future Sale\n166\nUnderwriting\n168\nLegal Matters\n178\nExperts\n178\nChange in Independent Registered Public Accounting Firm\n179\nWhere You Can Find More Information\n180\nIndex to Financial Statements\nF-1\nIn connection with this offering, we intend to effect the Reorganization (as defined below). In this\nprospectus, unless otherwise indicated or the context otherwise requires, “Arxis,” the “Company,” “we,” “us” and similar terms refer to Arxis, Inc. and its consolidated subsidiaries, inclusive of the\nArxis Businesses.\nWe and the underwriters have not authorized anyone to provide any information or to make any representations other than\nthose contained in this prospectus or in any free writing prospectuses we have prepared. We a\n\nRisk Factors—Risks Related to the Reorganization—Our Sponsor will continue\nto have substantial control over us after this offering, and their near-total voting power will limit your ability to influence key decisions and may create governance risks, conflicts of interest, and shareholder protection concerns” and\n“Management—Controlled Company Status.”\nInvesting in our Class A common stock involves a high degree of risk. See “\nRisk Factors\n” beginning on\npage 26 of this prospectus.\nPer\nShare\nTotal\nInitial public offering price\n$\n$\nUnderwriting discounts and\ncommissions\n(1)\n$\n$\nProceeds to us, before expenses\n$\n$\n(1)\nSee “Underwriting” for a description of all compensation payable to the underwriters.\nWe have granted the underwriters an option for a period of 30 days to purchase up to 5,660,377 additional shares of Class A common\nstock to cover the underwriters’ option to purchase additional shares.\nAt our request, the underwriters have reserved up to 1,886,792 shares of our\nClass A comm\n\nResults of OperationsNon-GAAP Financial Information\" for more\ninformation on this non-GAAP financial information, including a reconciliation to the nearest GAAP measure. Adjusted EBITDA is a non-GAAP financial measure that we defined as net income (loss), adjusted for: (i) interest expense, net; (ii) income\ntax expense (benefit); (iii) depreciation and amortization; (iv) acquisition and integration costs; (v) restructuring costs; (vi) transaction and other deal related expenses; (vii) share-based compensation expense; (viii) refinancing costs; and (ix)\nother non-recurring adjustments.Arxis is a leading designer and manufacturer of proprietary, mission-critical electronic and mechanical components engineered for cutting edge performance in extreme environments. ~$1.6Bn ~$46MM ~$571MM2025 Revenue\n2025 Net Income 2025 Adj. EBITDA(1)~90% 5,000+ 600+Revenue from Customers Platforms ServedProprietary Products 1 This is a non-GAAP financial measure and should not be used as a substitute ",
+      "analysis": {
+        "industry": "Electronic & Mechanical Components Manufacturing (Defense/Aerospace)",
+        "business_summary": "Arxis是领先的专有任务关键型电子和机械零部件设计商及制造商，产品专为极端环境下的尖端性能而设计，服务超5000个平台，90%以上收入来自专有产品。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            1600
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            46
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "Sponsor在IPO后仍拥有近乎绝对的投票权，普通股东影响力极为有限",
+          "双重股权结构引发公司治理风险及潜在利益冲突，股东保护机制薄弱",
+          "Controlled Company状态使公司可豁免部分NASDAQ独立董事要求，治理透明度存疑"
+        ],
+        "claude_summary": "Arxis具备强大的专有产品护城河（90%收入）和广泛平台覆盖，2025年营收16亿美元，但净利润率仅约2.9%，Adj.EBITDA达5.71亿元显示调整项较大。双重股权结构下Sponsor控制风险显著，需谨慎评估治理风险与估值。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-16",
+      "symbol": "MAIR",
+      "company": "Madison Air Solutions Corporation",
+      "exchange": "NYSE",
+      "price_range": "$25.00 - $27.00",
+      "shares_offered": "82,692,308",
+      "deal_size": "2.15B",
+      "market_cap": "12.71B",
+      "revenue": "3.34B",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2098430/000119312526142875/ck0002098430-20260406.htm",
+      "sec_raw_excerpt": "Business\n116\nManagement\n143\nExecutive Compensation\n149\nDirector Compensation\n163\nPrincipal Stockholders\n164\nOrganizational Transactions\n166\nCertain Relationships and Related Party Transactions\n173\nDescription of Certain Indebtedness\n177\nDescription of Capital Stock\n182\nShares Eligible for Future Sale\n191\nMaterial U.S. Federal Income Tax Consequences to Non-U.S. Holders\n194\nUnderwriting\n198\nLegal Matters\n210\nExperts\n211\nWhere You Can Find More Information\n212\nIndex to Consolidated Financial Statements\nF-\n1\nNeither we nor any of the underwriters have authorized anyone to provide any information or make any representations other than those contained in this prospectus or in any free writing prospectus filed with the U.S. Securities and Exchange Commission (the “SEC”). Neither we nor any of the underwriters take any responsibility for, and can provide no assurance as to the reliability of, any other information that others may give you. We are offering to sell, and seeking offers to buy, s\n\nRisk Factors\n” beginning on page 36 to read about factors you should consider before buying shares of our Class A common stock.\nNeither the Securities and Exchange Commission nor any other regulatory body has approved or disapproved of these securities or passed upon the accuracy or adequacy of this prospectus. Any representation to the contrary is a criminal offense.\n﻿\nPer Share\n﻿\nTotal\nInitial public offering price\n﻿\n$\n﻿\n$\nUnderwriting discount\n(1)\n﻿\n$\n﻿\n$\nProceeds, before expenses, to Madison Air Solutions Corporation\n﻿\n$\n﻿\n$\n(1)\nSee the section entitled “Underwriting” for a description of compensation payable to the underwriters.\nWe have granted the underwriters the option to purchase up to an additional 12,403,846 shares of our Class A common stock at the initial public offering price less the underwriting discount for a period of 30 days after the date of this prospectus.\nCounterpoint Global (Morgan Stanley Investment Management), Durable Capital Partners LP and HRTG GPE, LLC or\n\nResults of Operations—Non-GAAP Financial Measures.”\n3\nFCF Conversion is a non-GAAP financial performance measure. We define FCF Conversion as FCF divided by net income (loss) from continuing operations. For a reconciliation of FCF to operating cash flow conversion — continuing operations, the most directly comparable financial measure calculated and presented in accordance with GAAP, see “Management’s Discussion and Analysis of Financial Condition and Results of Operations—Non-GAAP Financial Measures.”\n4\nBased on historical averages of net sales and management estimates. Note: Values are approximate.\nTable of Contents\nTable of Contents\nTable of Contents\nTABLE OF C\nONTENTS\nPage\nBasis of Presentation\nii\nTrademarks, Service Marks and Tradenames\nv\nMarket and Industry Data\nvi\nProspectus Summary\n1\nThe Offering\n27\nSummary Consolidated and Unaudited Pro Forma Combined Financial Information\n30\nRisk Factors\n36\nForward-Looking Statements\n69\nUse of Proceeds\n71\nDividend Policy\n72\nCapitalization\n",
+      "analysis": {
+        "industry": "HVAC / Air Solutions / Building Technology",
+        "business_summary": "Madison Air Solutions Corporation（MAIR）是一家空气解决方案公司，主要从事与空调、通风及相关系统的产品或服务业务。招股书摘录未提供足够业务细节，核心产品线及市场定位需参阅S-1正文第116页Business章节。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [
+            "Morgan Stanley"
+          ],
+          "cornerstone_investors": [
+            "Counterpoint Global (Morgan Stanley Investment Management)",
+            "Durable Capital Partners LP",
+            "HRTG GPE, LLC"
+          ],
+          "funding_rounds": []
+        },
+        "risks": [
+          "招股书摘录未提供具体风险因素内容，详细风险列于S-1第36-69页Risk Factors章节",
+          "超额配售权授予承销商最多12,403,846股，存在上市后股价稀释压力",
+          "采用非GAAP财务指标（FCF Conversion等）可能掩盖实际盈利质量，投资者需审慎评估"
+        ],
+        "claude_summary": "摘录内容以目录与发行条款为主，核心财务数据、业务描述及具体风险均未披露，无法完成完整量化分析。已知基石投资者含Durable Capital Partners等机构，承销商为摩根士丹利，超额配售约1240万股。建议获取完整S-1后重新分析。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-17",
+      "symbol": "ALMR",
+      "company": "Alamar Biosciences, Inc.",
+      "exchange": "NASDAQ",
+      "price_range": "$64,890,799.00",
+      "shares_offered": "9,375,000",
+      "deal_size": "608.35T",
+      "market_cap": "-",
+      "revenue": "74.21M",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2104204/000119312526151891/d39680ds1a.htm",
+      "sec_raw_excerpt": "Business\n120\nManagement\n154\nExecutive and director compensation\n162\nCertain relationships and related person transactions\n183\nPrincipal stockholders\n186\nDescription of capital stock\n189\nShares eligible for future sale\n195\nMaterial U.S. federal income tax consequences to\nnon-U.S.\nholders\n198\nUnderwriting\n203\nLegal matters\n215\nExperts\n215\nWhere you can find additional information\n215\nIndex to consolidated financial statements\nF-1\nNeither we nor the underwriters have authorized anyone to provide you any information or make any representations other than those\ncontained in this prospectus or in any free writing prospectuses prepared by or on behalf of us or to which we have referred you. We and the underwriters take no responsibility for, and can provide no assurance as to the reliability of, any other\ninformation that others may give you. We and the underwriters are not making an offer to sell these securities in any jurisdiction where the offer or sale is not permitted. You should assume\n\nRisk factors\n” beginning on page 19.\nNeither the Securities and Exchange Commission nor any\nstate securities commission has approved or disapproved of these securities or passed on the adequacy or accuracy of this prospectus. Any representation to the contrary is a criminal offense.\nThe underwriters expect to deliver the shares of common stock to the purchasers on or about     , 2026.\nJ.P. Morgan\nBofA Securities\nTD Cowen\nLeerink Partners\nStifel\n, 2026\nTable of Contents\nTable of Contents\nOur Mission Powering precisionproteomics to enable theearliest detection ofdisease.\nTable of Contents\n2025 Revenue $74MTotal Revenue196%Y/Y Revenue GrowthCustomers>100Instrument Installed Base1>$400KAverage Annual\nInstrument Pull-through2>100Publications and Pre-prints22025 Revenue~50%Contribution From Consumable Revenue21. Cumulative installed base as of December 31, 2025.2. As of December 31, 2025.\nTable of Contents\nRevenue Services & Other Instruments Consumables $25.1M $74.2M 2024 2025\nTable of Cont\n\nresults of operations\n102\nBusiness\n120\nManagement\n154\nExecutive and director compensation\n162\nCertain relationships and related person transactions\n183\nPrincipal stockholders\n186\nDescription of capital stock\n189\nShares eligible for future sale\n195\nMaterial U.S. federal income tax consequences to\nnon-U.S.\nholders\n198\nUnderwriting\n203\nLegal matters\n215\nExperts\n215\nWhere you can find additional information\n215\nIndex to consolidated financial statements\nF-1\nNeither we nor the underwriters have authorized anyone to provide you any information or make any representations other than those\ncontained in this prospectus or in any free writing prospectuses prepared by or on behalf of us or to which we have referred you. We and the underwriters take no responsibility for, and can provide no assurance as to the reliability of, any other\ninformation that others may give you. We and the underwriters are not making an offer to sell these securities in any jurisdiction where the offer or sale is no",
+      "analysis": {
+        "industry": "Life Sciences / Precision Proteomics",
+        "business_summary": "Alamar Biosciences开发精准蛋白质组学平台，致力于疾病最早期检测。产品涵盖仪器、耗材及服务，2025年仪器装机量逾100台，耗材收入占比约50%，体现典型的仪器+试剂商业模式。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            25.1,
+            74.2
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": "196%",
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [
+            "J.P. Morgan",
+            "BofA Securities",
+            "TD Cowen",
+            "Leerink Partners",
+            "Stifel"
+          ],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "公司处于商业化早期阶段，尚未实现盈利，持续依赖外部融资",
+          "蛋白质组学市场竞争激烈，技术迭代风险高，可能面临更先进平台的竞争替代",
+          "仪器装机量基数小（>100台），客户集中度较高，单一客户流失对收入影响显著"
+        ],
+        "claude_summary": "ALMR凭借精准蛋白质组学赛道和196%的爆发式增长展示出强劲的市场牵引力，仪器+耗材模式构建了可持续的经常性收入。承销阵容顶级，但盈利能力信息缺失，早期阶段亏损风险需重点关注。整体属于高成长、高风险的生命科学器械标的。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-17",
+      "symbol": "AVEX",
+      "company": "AEVEX Corp.",
+      "exchange": "NYSE",
+      "price_range": "$18.00 - $21.00",
+      "shares_offered": "16,000,000",
+      "deal_size": "312.00M",
+      "market_cap": "2.18B",
+      "revenue": "432.93M",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2096300/000119312526148877/d22113ds1a.htm",
+      "sec_raw_excerpt": "business. The LLC Unitholders will hold the remaining 63,297,524 LLC Units representing a 56.6% economic interest in\nHoldings LLC. Each LLC Unit, together with one share of our Class B common stock, is, from time to time, exchangeable for one share of Class A common stock or, at our election, for cash from a substantially concurrent public offering or\nprivate sale (based on the price of our Class A common stock in such public offering or private sale). AEVEX Corp. will be a holding company, and upon consummation of this offering and the application of the net proceeds therefrom, its sole\nasset will be LLC Units of Holdings LLC. Immediately following this offering, the holders of Class A common stock will collectively own 100% of the economic interests in AEVEX Corp. and have 43.4% of the voting power of AEVEX Corp. The LLC\nUnitholders, through ownership of our Class B common stock, will have the remaining 56.6% of the voting power of AEVEX Corp.\nAEVEX Corp. is an\n“emerging growth compa\n\nRisk Factors—Risks Related to Our Organizational Structure” and “Certain Relationships and Related Party Transactions—Tax Receivable Agreement.”\nFollowing the completion of this offering, AEVEX Corp. will have two authorized classes of common stock: Class A and Class B (together, the\n“common stock”). Holders of the Class A common stock and Class B common stock will be entitled to one vote per share. All holders of Class A common stock and Class B common stock will vote together as a single class\nexcept as otherwise required by applicable law. Holders of Class B common stock will not have any right to receive dividends or distributions upon the liquidation or winding up of AEVEX Corp.\nAEVEX Corp. will use the net proceeds from this offering to purchase newly-issued units (“LLC Units”) in Holdings LLC and, if the\nunderwriters’ option to purchase additional shares is exercised, to purchase LLC Units and Class B common stock from certain direct and indirect equityholders of Holdings LLC. T\n\nresults of operations, and prospects may have changed since such date.\nFor investors outside of the United States, neither we, the selling stockholder nor any of the underwriters have done anything that would\npermit this offering or possession or distribution of this prospectus in any jurisdiction where action for that purpose is required, other than in the United States. You are required to inform yourselves about, and to observe any restrictions\nrelating to, this offering and the distribution of this prospectus outside of the United States.\nThrough and including  ,\n2026 (the 25th day after the date of this prospectus), all dealers effecting transactions in these securities, whether or not participating in this offering, may be required to deliver a prospectus. This is in addition to a dealer’s obligation\nto deliver a prospectus when acting as an underwriter and with respect to an unsold allotment or subscription.\ni\nTable of Contents\nBASIS OF PRESENTATION\nIn connection with the co",
+      "analysis": {
+        "industry": "Defense / Unmanned Aerial Systems (inferred from company name; not explicitly stated in provided excerpts)",
+        "business_summary": "AEVEX Corp.是一家持股公司，通过Holdings LLC开展实际运营。采用Up-C双层股权架构，Class A股在NYSE上市交易，Class B股由原有LLC权益人持有。IPO募集资金将用于购买Holdings LLC新增LLC Units，公众股东获得全部经济利益，原有LLC权益人保留56.6%投票权。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "Up-C双层股权结构导致Class A公众股东经济利益与投票权严重不对等：LLC Unitholders通过Class B股持有56.6%投票权，可实际主导公司决策，而公众股东仅享有43.4%投票权",
+          "税收受益协议（Tax Receivable Agreement）对公司现金流构成潜在重大负担，属关联方交易，利益冲突风险高",
+          "作为新兴成长公司（Emerging Growth Company），适用宽松披露标准，财务透明度相对不足；此外，招股书明确限制境外分发，非美国投资者面临额外合规限制"
+        ],
+        "claude_summary": "AEVEX Corp.以Up-C架构上市，上市公司本身仅为壳体，运营实体为Holdings LLC。所提供招股书摘录几乎全为公司治理结构描述，缺乏收入、利润等核心财务数据，无法量化评估盈利能力与成长性。双重股权结构与税收受益协议使公众股东在经济利益和控制权之间均处于弱势，投资者需充分关注治理风险。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-17",
+      "symbol": "BWGC",
+      "company": "BW Industrial Holdings Inc.",
+      "exchange": "NYSEAMERICAN",
+      "price_range": "$6.00 - $7.00",
+      "shares_offered": "2,625,000",
+      "deal_size": "17.06M",
+      "market_cap": "143.16M",
+      "revenue": "55.65M",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2080841/000121390026028518/ea0252378-07.htm",
+      "sec_raw_excerpt": "Business Startups Act of 2012 (the “JOBS Act”) and, as such, have elected to comply with certain reduced public company reporting requirements for this prospectus and future filings. See “Prospectus Summary — Implications of Being an Emerging Growth Company.”\nAdditionally, we are, and following the completion of this Offering, will continue to be, a “controlled company” as defined under NYSE American Company Guide Section 801(a). Mr.\nYunlong Zhang, our controlling stockholder, will be able to exercise approximately 57.21% of the aggregate voting power of our issued and outstanding shares of Common Stock and will be able to determine all matters requiring approval by our stockholders, immediately after the consummation of this Offering, assuming the sales of 2,625,000\nshares of Common Stock we are offering and no over\n-allotment\noption is exercised by the underwriters. Mr.\nYunlong Zhang has served as our Chief Executive Officer (“CEO”) and director (“Director”) since November 2016. For\n\nRisk Factors — Risks Relating to Our Capital Stock and Trading — We will be a ‘controlled company’ within the meaning of NYSE American Company Guide and, as a result, will qualify for exemptions from certain corporate governance requirements”.\nWe may amend or supplement this prospectus from time to time by filing amendments or supplements as required. You should read this entire prospectus and any amendments or supplements carefully before you make your investment decision.\nAn investment in our Common Stock is speculative and involves a high degree of risk. See “Risk Factors” beginning at page 12 to read about factors you should consider before buying our Common Stock.\nPer Share\nTotal Without\nOver-Allotment\nOption\nTotal With\nOver-Allotment\nOption\nAssumed Initial public offering price of Common Stock\n(1)\n$\n6.50\n$\n17,062,500\n$\n19,621,875\nUnderwriting discounts\n(2)\n$\n0.39\n$\n1,023,750\n$\n1,177,313\nProceeds to our company before expenses\n(3)\n$\n6.11\n$\n16,038,750\n$\n18,444,562\n____________\n(1)\n\nResults of Operations\n37\nBusiness\n51\nIndustry\n63\nManagement\n71\nExecutive Compensation\n75\nSecurity Ownership of Certain Beneficial Owners and Management\n77\nShares Eligible For Future Sale\n78\nUnderwriting\n80\nCertain Relationships and Related Transactions\n85\nDescription of Securities\n87\nLegal Matters\n91\nExperts\n91\nDisclosure Of Commission Position on Indemnification for Securities Act Liabilities\n91\nWhere You Can Find Additional Information\n91\nExhibits and Financial Statement Schedule\nF-1\nNeither we nor the underwriters have authorized any person to give you any supplemental information or to make any representations for us. You should not rely upon any information about us that is not contained in this prospectus or in any free writing prospectuses prepared by us or on our behalf or to which we have referred you. Information contained in this prospectus or in our other public reports may become stale. You should not assume that the information contained in this prospectus, any prospect",
+      "analysis": {
+        "industry": "Industrial Holdings / Manufacturing",
+        "business_summary": "BW Industrial Holdings Inc.（BWGC）是一家工业控股公司，在纽交所美国板块上市。由CEO张云龙自2016年11月起掌舵，属于《JOBS法案》定义的新兴成长型公司，具体主营业务在现有摘录中未详细披露。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "控股股东集中风险：CEO张云龙在IPO后仍持有约57.21%的投票权，可单独决定所有股东会事项，中小投资者话语权极低",
+          "公司治理豁免风险：作为NYSE American'受控公司'，可豁免部分公司治理要求，投资者保护机制不完整",
+          "信息披露有限风险：作为新兴成长型公司享受简化披露，财务透明度低于成熟上市公司，招股书提示投资具有高度投机性"
+        ],
+        "claude_summary": "本次IPO发行价6.50美元，拟募资约1,604万美元（不含超额配售）。招股书摘录财务数据严重不足，无法评估基本面。最大隐患是控股股东一人独大（57.21%投票权）叠加治理豁免，投资者权益保障薄弱。综合风险偏高，建议待完整财报披露后再作评估。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-17",
+      "symbol": "KLRA",
+      "company": "Kailera Therapeutics, Inc.",
+      "exchange": "NASDAQ",
+      "price_range": "$14.00 - $16.00",
+      "shares_offered": "33,333,334",
+      "deal_size": "500.00M",
+      "market_cap": "1.77B",
+      "revenue": "-",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2096997/000119312526151904/d113532ds1a.htm",
+      "sec_raw_excerpt": "Business\n119\nManagement\n182\nExecutive and director compensation\n192\nCertain relationships and related party transactions\n208\nPrincipal stockholders\n212\nDescription of capital stock\n215\nShares eligible for future sale\n221\nMaterial U.S. federal income tax consequences to\nNon-U.S.\nHolders\n224\nUnderwriting\n228\nLegal matters\n241\nExperts\n241\nWhere you can find more information\n241\nIndex to financial statements\nF-1\nNeither we nor the underwriters have authorized anyone to provide any information or to make any representations other than those contained in this prospectus, any\namendment or supplement to this prospectus, or in any free writing prospectus prepared by or on behalf of us or to which we have referred you. We and the underwriters take no responsibility for, and can provide no assurance as to the reliability of,\nany other information that others may give you. This prospectus is an offer to sell only the shares of common stock offered hereby, but only under circumstances and in jurisd\n\nRisk factors\n” beginning on page 16 of this prospectus.\nNeither the Securities and Exchange Commission nor any other regulatory body has approved or disapproved of these securities or passed upon the accuracy or adequacy\nof this prospectus. Any representation to the contrary is a criminal offense.\nThe underwriters expect to deliver the shares against payment on or about\n    , 2026.\nJoint Book-Running Managers\nJ.P. Morgan\nJefferies\nLeerink Partners\nTD Cowen\nEvercore ISI\nLead Manager\nWilliam Blair\nThe date of this prospectus is\n    , 2026.\nTable of Contents\nTable of contents\nPage\nProspectus summary\n1\nRisk factors\n16\nSpecial note regarding forward-looking statements\n96\nUse of proceeds\n98\nDividend policy\n100\nCapitalization\n101\nDilution\n103\nManagement’s discussion and analysis of financial condition and results of operations\n106\nBusiness\n119\nManagement\n182\nExecutive and director compensation\n192\nCertain relationships and related party transactions\n208\nPrincipal stockholders\n212\nDescription\n\nresults of operations\n106\nBusiness\n119\nManagement\n182\nExecutive and director compensation\n192\nCertain relationships and related party transactions\n208\nPrincipal stockholders\n212\nDescription of capital stock\n215\nShares eligible for future sale\n221\nMaterial U.S. federal income tax consequences to\nNon-U.S.\nHolders\n224\nUnderwriting\n228\nLegal matters\n241\nExperts\n241\nWhere you can find more information\n241\nIndex to financial statements\nF-1\nNeither we nor the underwriters have authorized anyone to provide any information or to make any representations other than those contained in this prospectus, any\namendment or supplement to this prospectus, or in any free writing prospectus prepared by or on behalf of us or to which we have referred you. We and the underwriters take no responsibility for, and can provide no assurance as to the reliability of,\nany other information that others may give you. This prospectus is an offer to sell only the shares of common stock offered hereby, but only unde",
+      "analysis": {
+        "industry": "Biopharmaceuticals / Clinical-Stage Therapeutics",
+        "business_summary": "Kailera Therapeutics（KLRA）是一家临床阶段生物制药公司，在NASDAQ上市。招股书摘录主要为目录与法律声明，核心业务详情未在所提供内容中披露，推测专注于创新疗法研发。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [
+            "J.P. Morgan",
+            "Jefferies",
+            "Leerink Partners",
+            "TD Cowen",
+            "Evercore ISI",
+            "William Blair"
+          ],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "临床阶段公司，尚无商业化产品，存在持续亏损风险",
+          "招股书风险因素章节长达80页（第16至96页），表明风险因素复杂且众多",
+          "生物制药研发存在高度不确定性，临床试验可能失败或监管审批不通过"
+        ],
+        "claude_summary": "本次分析所提供的招股书摘录仅含目录与法律声明，缺乏业务、财务及风险的实质内容，无法提取关键财务指标。承销团阵容强大（小摩领衔），显示市场认可度较高。建议获取完整S-1文件后再做深度评估。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-22",
+      "symbol": "NHP",
+      "company": "National Healthcare Properties, Inc.",
+      "exchange": "NASDAQ",
+      "price_range": "$13.00 - $16.00",
+      "shares_offered": "38,500,000",
+      "deal_size": "558.25M",
+      "market_cap": "982.79M",
+      "revenue": "342.28M",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2107166/000147793226002124/rwbhealth_s1a.htm",
+      "sec_raw_excerpt": "business acquaintances.  In offering the securities on our behalf, he will rely on the safe harbor from broker-dealer registration set out in Rule 3a4-1 under the Securities and Exchange Act of 1934.  The shares will be offered at a fixed price of $.025 per share for a period of one hundred and eighty (90) days from the effective date of this prospectus, unless extended by our board of directors for an additional 90 days.\nOffering Price Per Share\nCommissions\nProceeds to Company\nCommon Stock\n$\n.025\nNot Applicable\n$\n75,000\nTotal\n$\n.025\nNot Applicable\n$\n75,000\nRWB Health Inc.  is a development stage company. Any investment in the shares offered herein involves a high degree of risk.  You should only purchase shares if you can afford a loss of your investment.  Our independent registered public accountant has issued an audit opinion for RWB Health Inc. which includes a statement expressing substantial doubt as to our ability to continue as a going concern.\nThere has been no market for our\n\nRISK FACTORS\n7\nUSE OF PROCEEDS\n15\nDETERMINATION OF OFFERING PRICE\n15\nDILUTION\n16\nINFORMATION WITH RESPECT TO THE REGISTRANT\n21\nAVAILABLE INFORMATION\n23\nLEGAL PROCEEDINGS\n24\nDIRECTORS, EXECUTIVE OFFICERS, PROMOTER AND CONTROL PERSONS\n24\nPLAN OF DISTRIBUTION\n26\nDESCRIPTION OF SECURITIES TO BE REGISTERED\n28\nINTERESTS OF NAMED EXPERTS AND COUNSEL\n29\nDISCLOSURE OF COMMISSION POSITION ON INDEMNIFICATION FOR SECURITIES ACT LIABILITIES\n29\nCHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE\n30\nOther Expenses of Issuance and Distribution\n31\nIndemnification of Directors and Officers\n31\nRecent Sales of Unregistered Securities\n32\nCondensed Financial Statements as of December 31, 2025\n33\nDEALER PROSPECTUS DELIVERY OBLIGATION\nUntil _________, all dealers that effect transactions in these securities, whether or not participating in this offering, may be required to deliver a prospectus. This is in addition to the dealers’ obligation to deliver a prospectus when acting\n\nresults of operations, and financial condition.\nMaintaining compliance with THC thresholds and related testing requirements is operationally complex and may be costly.\nOur products are intended to be derived from industrial hemp and to contain no more than 0.3% delta‑9 THC on a dry‑weight basis. However, cannabinoid levels can vary by batch, testing methodologies may differ, and results may depend on sampling and laboratory procedures. If any product or shipment is alleged or determined to exceed applicable THC thresholds or otherwise fail to comply with applicable requirements, we could be subject to product holds, recalls, seizure, destruction, penalties, loss of vendor relationships, and reputational harm, which could materially and adversely affect our business.\nEven if a product is manufactured from hemp that complies with federal law, states and localities maintain their own rules governing hemp-derived CBD products, which may include restrictions on ingestible products, additi",
+      "analysis": {
+        "industry": "Healthcare / Hemp-Derived CBD Products (Development Stage)",
+        "business_summary": "RWB Health Inc.（招股书实际主体，与用户提供名称NHP不符）为初创阶段公司，主营工业大麻来源的CBD产品，产品THC含量须低于0.3%干重标准。公司尚未产生实质性收入，审计师对持续经营能力存重大疑虑。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "持续经营疑虑：独立审计师对公司持续经营能力出具重大疑虑意见，投资存在全损风险",
+          "THC合规风险：大麻素含量受批次、检测方法影响，若超标将面临产品召回、扣押、处罚及声誉损害",
+          "多层监管风险：各州及地方对含CBD可食用产品有独立规定，合规成本高、法律不确定性大",
+          "流动性风险：无经纪商承销，由公司高管自行销售，募资规模仅7.5万美元，市场流动性极低"
+        ],
+        "claude_summary": "注意：招股书内容与公司名称（NHP）不符，实为RWB Health Inc.的CBD初创企业。公司处于开发阶段，无收入记录，审计师出具持续经营疑虑，募资额仅7.5万美元，每股0.025美元，无正规承销商。整体风险极高，不适合风险承受能力有限的投资者。"
+      }
+    },
+    {
+      "ipo_date": "2026-04-24",
+      "symbol": "RIKU",
+      "company": "Riku Dining Group Limited",
+      "exchange": "NASDAQ",
+      "price_range": "$4.00 - $6.00",
+      "shares_offered": "5,000,000",
+      "deal_size": "25.00M",
+      "market_cap": "115.00M",
+      "revenue": "18.74M",
+      "sec_filing_url": "https://www.sec.gov/Archives/edgar/data/2058976/000149315225024047/formf-1a.htm",
+      "sec_raw_excerpt": "business operations in\ncertain areas in China with little advance notice, including cracking down on illegal activities in the securities market, enhancing\nsupervision over China-based companies listed overseas using a VIE structure, adopting new measures to extend the scope of cybersecurity\nreviews, and expanding its efforts in anti-monopoly enforcement. Since these statements and regulatory actions are new, it is highly\nuncertain how soon the legislative or administrative regulation making bodies will respond and what existing or new laws or regulations\nor detailed implementations and interpretations will be modified or promulgated, if any. It is also highly uncertain what the potential\nimpact such modified or new laws and regulations will have on our HK Operating Subsidiaries’ daily business operations, their ability\nto accept foreign investments and the listing of our Class A Ordinary Shares on a U.S. or other foreign exchange. These actions\ncould result in a material change in our\n\nRisk Factors —Risks Related to our Class A Ordinary Shares and this Offering—The future sales of Ordinary Shares by existing shareholders, including the sales pursuant to the Resale\nProspectus, may adversely affect the market price of our Class A Ordinary Shares.”\nPrior\nto this offering, there has been no public market for our Class A Ordinary Shares. The offering price of our Class A Ordinary Shares\nin this offering is expected to be between US$4 and US$6 per share. We have applied to have our Class A Ordinary Shares\nlisted on the Nasdaq Capital Market under the symbol “RIKU.” There is no assurance that our listing application will be approved\nby the Nasdaq Capital Market, and if our listing application is not approved by the Nasdaq Capital Market, this initial public offering\nwill be terminated.\nNo sales of the Class A Ordinary\nShares covered by the Resale Prospectus shall occur until the Ordinary Shares sold in our IPO begin trading on the Nasdaq Capital Market.\nWe\nhave a dual-class\n\nResults of Operations\n67\nBusiness\n104\nOur Relationship with Certain Franchisors\n119\nRegulations\n125\nManagement\n135\nRelated Party Transactions\n142\nPrincipal\nShareholders\n145\nDescription of Share Capital\n146\nShares Eligible for Future Sale\n155\nMaterial Taxation Considerations\n157\nEnforcement of Civil Liabilities\n163\nUnderwriting\n164\nExpenses Related to this Offering\n168\nLegal Matters\n169\nExperts\n169\nWhere You Can Find Additional Information\n169\nIndex to Consolidated Financial Statements\nF-1\nWe\nare responsible for the information contained in this prospectus and any free writing prospectus we prepare or authorize. We have not,\nand the underwriters have not, authorized anyone to provide you with different information, and we and the underwriters take no responsibility\nfor any other information others may give you. We are not, and the underwriters are not, making an offer to sell our Class A Ordinary\nShares in any jurisdiction where the offer or sale is not permitted. You should not ass",
+      "analysis": {
+        "industry": "Restaurant / Food & Beverage",
+        "business_summary": "Riku Dining Group Limited是一家以香港为运营主体的餐饮集团，拟于纳斯达克资本市场上市，股票代码RIKU，发行价区间为每股4至6美元，采用双重股权架构（A类普通股）。",
+        "financials": {
+          "revenue_3y": [
+            null,
+            null,
+            null
+          ],
+          "net_income_3y": [
+            null,
+            null,
+            null
+          ],
+          "gross_margin": null,
+          "revenue_growth_yoy": null,
+          "debt_ratio": null,
+          "cash_reserves": null,
+          "operating_cashflow": null,
+          "eps": null,
+          "ps_ratio": null
+        },
+        "investors": {
+          "underwriters": [],
+          "cornerstone_investors": [],
+          "funding_rounds": []
+        },
+        "risks": [
+          "中国监管风险：监管机构可能针对VIE架构、网络安全审查及反垄断执法出台新规，对香港运营子公司的日常经营和外资接受能力产生重大不利影响",
+          "上市不确定性：纳斯达克资本市场对上市申请不提供任何保证，若申请未获批准，本次IPO将终止",
+          "股价下行压力：现有股东（包括通过转售招股书出售股份者）的未来减持行为可能对A类普通股市场价格产生不利影响",
+          "双重股权结构风险：双重股权架构可能导致A类普通股持有人的投票权及公司治理影响力受到限制"
+        ],
+        "claude_summary": "招股书摘录信息有限，财务数据未能提取。公司为香港运营的餐饮集团，面临中国监管政策（VIE、网络安全、反垄断）的高度不确定性，叠加上市申请无保证及双重股权结构等风险。建议投资者在完整财务数据披露后审慎评估基本面。"
+      }
+    }
+  ],
+  "ai_analyzed_at": "2026-04-14T06:44:11.326616Z"
+}
