@@ -1,0 +1,36 @@
+{
+  "week": "2026-11-16",
+  "generated_at": "2026-11-16T01:44:42.601893Z",
+  "ai_analyzed_at": null,
+  "ipo_count": 2,
+  "ipos": [
+    {
+      "ipo_date": "2026-11-19",
+      "symbol": "ANT",
+      "company": "Anthropic, PBC",
+      "exchange": "NASDAQ",
+      "price_range": "$70.00 - $78.00",
+      "shares_offered": "825,000,000",
+      "deal_size": "61.05B",
+      "market_cap": "968.41B",
+      "revenue": "35.28B",
+      "sec_filing_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1684688/000149315225026653/formf-1a.htm",
+      "sec_raw_excerpt": "",
+      "analysis": null
+    },
+    {
+      "ipo_date": "2026-11-19",
+      "symbol": "ANT",
+      "company": "Anthropic, PBC",
+      "exchange": "NASDAQ",
+      "price_range": "$70.00 - $78.00",
+      "shares_offered": "825,000,000",
+      "deal_size": "61.05B",
+      "market_cap": "968.41B",
+      "revenue": "35.28B",
+      "sec_filing_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1684688/000149315225026653/formf-1a.htm",
+      "sec_raw_excerpt": "",
+      "analysis": null
+    }
+  ]
+}
